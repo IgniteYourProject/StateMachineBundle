@@ -43,6 +43,12 @@ class ContainerAwareCallback extends Callback
 
             $serviceId = substr($this->callable[0], 1);
             $this->callable[0] = $this->container->get($serviceId);
+        } elseif (
+            is_array($this->callable)
+            && is_string($this->callable[0])
+            && 0 === strpos($this->callable[0], 'object')
+        ) {
+            $this->callable[0] = $event->getStateMachine()->getObject();
         }
 
         return parent::call($event);
