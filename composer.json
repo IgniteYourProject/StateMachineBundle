@@ -10,6 +10,27 @@
             "homepage": "http://alex.bacco.fr"
         }
     ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+              "name": "winzou/state-machine",
+              "version": "0.2",
+              "dist": {
+                "url": "https://github.com/IgniteYourProject/state-machine/archive/master.zip",
+                "type": "zip"
+              },
+              "source": {
+                "url": "https://github.com/IgniteYourProject/state-machine.git",
+                "type": "git",
+                "reference": "0.2"
+              },
+              "autoload": {
+                "psr-0": { "SM": "src/" }
+              }
+            }
+        }
+    ],
     "require": {
         "php":                      ">5.3.0",
         "symfony/framework-bundle": "~2.1",
