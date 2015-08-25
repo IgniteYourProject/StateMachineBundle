@@ -92,14 +92,6 @@ class winzouStateMachineExtension extends Extension
                     unset($callbacks[$position][$i]);
                 }
             }
-
-            // Order callbacks according to priority index
-            uasort($callbacks[$position], function($a, $b) {
-                if ($a['priority'] === $b['priority']) {
-                    return 0;
-                }
-                return $a['priority'] < $b['priority'] ? -1 : 1;
-            });
         }
 
         return $callbacks;
